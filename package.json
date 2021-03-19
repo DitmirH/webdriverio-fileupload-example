@@ -1,0 +1,29 @@
+{
+  "name": "wdiotest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:all": "npx wdio wdio.conf.js --cucumberOpts.tagExpression='not @ignore and not @todo'",
+    "test:feature:anonymousuploads": "npx wdio wdio.conf.js --cucumberOpts.tagExpression='@anonymouseUploads and @not @ignore and not @todo'",
+    "allure:report": "allure generate ./allure-results/ --clean -o ./reports/allure-report/ && allure open ./reports/allure-report/"
+  },
+  "author": "Ditmir Hasani - Qa Tech Consultancy",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^6.12.0",
+    "chai": "^4.2.0",
+    "fs-extra": "^9.1.0",
+    "glob": "^7.1.6",
+    "glob-promise": "^3.4.0"
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "^6.11.0",
+    "@wdio/cucumber-framework": "^6.11.1",
+    "@wdio/local-runner": "^6.12.0",
+    "@wdio/spec-reporter": "^6.11.0",
+    "@wdio/sync": "^6.11.0",
+    "chromedriver": "^87.0.7",
+    "wdio-chromedriver-service": "^6.0.4"
+  }
+}
